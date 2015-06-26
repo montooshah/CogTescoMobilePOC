@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+ xmlns:userControls="clr-namespace:TescoPOC;assembly=TescoPOC"
+ x:Class="TescoPOC.UsagePage">
+	<ContentPage.Content>
+
+	<StackLayout Orientation="Vertical" HorizontalOptions="Fill" x:Name="Root" Padding="10"  >
+	<!--- Title bar -->
+		<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" x:Name="TitleBar"  BackgroundColor="Gray" Spacing="30" >
+			<Image Source="icon.png" HorizontalOptions="Start"  />
+			<Label Text="Usage" x:Name="TestLabel" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+			<Image Source="icon.png" HorizontalOptions="End" />
+		</StackLayout>
+	<!--- Title bar ends here-->
+
+	<!--- Usage Types -->
+		<StackLayout Orientation="Horizontal"  HorizontalOptions="Center" BackgroundColor="Gray" Spacing="10" Padding="10" >
+			<Image BackgroundColor="Yellow" Source="icon.png"  />
+			<Image BackgroundColor="Red"  Source="icon.png" />
+			<Image BackgroundColor="Green"  Source="icon.png" />
+		</StackLayout>
+
+	<!--- Usage Types ends Here -->
+		<StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand"   Spacing="1" >
+			 <Label Text="Built in Voice"  HorizontalOptions="StartAndExpand" />
+			 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="Gray">
+				 <Label Text="0"  HorizontalOptions="StartAndExpand" />
+				 <Label Text="150" HorizontalOptions="EndAndExpand" />
+			 </StackLayout>
+			 <ProgressBar ></ProgressBar>
+		</StackLayout>
+		
+		<StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand"   Spacing="1" >
+			 <Label Text="Built in Voice"  HorizontalOptions="StartAndExpand" />
+			 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="Gray">
+				 <Label Text="0"  HorizontalOptions="StartAndExpand" />
+				 <Label Text="150" HorizontalOptions="EndAndExpand" />
+			 </StackLayout>
+			 <ProgressBar HeightRequest="10"></ProgressBar>
+		</StackLayout>
+
+	<!--- Bottom ToolBar -->
+		<StackLayout Orientation="Vertical" Spacing="5" VerticalOptions="EndAndExpand">
+			
+			 <Label Text="Last Refreshed 10:20:34" x:Name="RefreshLabel" HorizontalOptions="StartAndExpand" />
+			 <Label Text="Last Refreshed   100/150" x:Name="RefreshLabel1" HorizontalOptions="StartAndExpand" />
+			
+			<StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" BackgroundColor="Gray" Spacing="14"  >
+				<Image Source="icon.png"  />
+				<Image Source="icon.png" />
+				<Image Source="icon.png" />
+				<Image Source="icon.png" />
+				<Image Source="icon.png"/>
+			</StackLayout>
+		</StackLayout>
+	<!--- Bottom ToolBar-->
+	</StackLayout>
+
+	</ContentPage.Content>
+</ContentPage>
