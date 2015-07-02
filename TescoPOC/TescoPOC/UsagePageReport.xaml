@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+ x:Class="TescoPOC.UsagePageReport">
+	<ContentPage.Content>
+		<StackLayout Orientation="Vertical" HorizontalOptions="Fill" x:Name="Root"  BackgroundColor="#FAFAFA" >
+	<!--- Title bar -->
+		<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" x:Name="TitleBar" Padding="10"  >		
+
+			<Image Source="header_logo.png" HorizontalOptions="StartAndExpand" />
+			<Label Text="Usage" FontSize="20" TextColor="Black" x:Name="TestLabel" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+			<Image Source="help_icon.png" HorizontalOptions="EndAndExpand" />
+  		
+		</StackLayout>
+	<!--- Title bar ends here-->
+
+	<!--- Usage Types -->
+		<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Padding="0" Spacing="0" >
+		<BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" BackgroundColor="#E3E3E3"></BoxView>
+		<StackLayout Orientation="Horizontal"  HorizontalOptions="Fill" BackgroundColor="#E3E3E3"  Padding="0" Spacing="1" >
+			<Image BackgroundColor="White" Source="line_segment_unselect.png"  />
+			<Image BackgroundColor="#00ACEA"  Source="circle_segment_select.png" />
+			<Image BackgroundColor="White"  Source="grid_segment_unselect.png" />
+		</StackLayout>
+		<BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" BackgroundColor="#BEC1C0"></BoxView>
+	</StackLayout>
+
+	<!--- Usage Types ends Here -->		 
+		 
+		
+	<!--- Bottom ToolBar -->
+		<StackLayout Orientation="Vertical"  VerticalOptions="EndAndExpand">
+			<StackLayout Orientation="Vertical"  Padding="10">
+			 <Label Text="Information Correct as of 10:30am on 1 Sep 2015" x:Name="RefreshLabel" HorizontalOptions="StartAndExpand" />
+			 <Label Text="Last refreshed at 10:30am on 1 Sep 2015" x:Name="RefreshLabel1" HorizontalOptions="StartAndExpand" />
+			</StackLayout>
+			<StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" BackgroundColor="#2B2B2B"  Padding="0"  Spacing="0" >
+				<StackLayout Orientation="Vertical" Padding="0"  Spacing="0">					
+					<Image Source="home_unselected.png"  HorizontalOptions="Center"  />
+					<Label Text="Home" HorizontalOptions="CenterAndExpand" VerticalOptions="Fill"  />
+				</StackLayout>
+				<StackLayout Orientation="Vertical" Padding="0"  Spacing="0" BackgroundColor="#141414" >			
+					<Image Source="usage_selected.png" />
+					<Label Text="Usage" HorizontalOptions="CenterAndExpand" VerticalOptions="Fill" TextColor="#141414"  />
+				</StackLayout>
+				<StackLayout Orientation="Vertical" Padding="0" Spacing="0">			
+					<Image Source="topup_unselected.png" />
+					<Label Text="TopUp" HorizontalOptions="CenterAndExpand" VerticalOptions="Fill"  />
+				</StackLayout>
+				<StackLayout Orientation="Vertical" Padding="0"  Spacing="0">		
+					<Image Source="bundles_unselected.png" />
+					<Label Text="Bundle" HorizontalOptions="CenterAndExpand" VerticalOptions="Fill"  />
+				</StackLayout>
+				<StackLayout Orientation="Vertical" Padding="0"  Spacing="0">		
+					<Image Source="tariff_unselected.png"/>
+					<Label Text="Tariff" HorizontalOptions="CenterAndExpand" VerticalOptions="Fill"  />
+				</StackLayout>
+			</StackLayout>
+		</StackLayout>
+	<!--- Bottom ToolBar-->
+	</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

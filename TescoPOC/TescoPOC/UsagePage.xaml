@@ -5,57 +5,143 @@
  x:Class="TescoPOC.UsagePage">
 	<ContentPage.Content>
 
-	<StackLayout Orientation="Vertical" HorizontalOptions="Fill" x:Name="Root" Padding="10"  >
+	<StackLayout Orientation="Vertical" HorizontalOptions="Fill" x:Name="Root" Padding="0" Spacing="0"  BackgroundColor="#FAFAFA" >
 	<!--- Title bar -->
-		<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" x:Name="TitleBar"  BackgroundColor="Gray" Spacing="30" >
-			<Image Source="icon.png" HorizontalOptions="Start"  />
-			<Label Text="Usage" x:Name="TestLabel" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-			<Image Source="icon.png" HorizontalOptions="End" />
+		<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" x:Name="TitleBar" Padding="10"  >		
+
+			<Image Source="header_logo.png" HorizontalOptions="StartAndExpand" />
+			<Label Text="Usage" FontSize="20" TextColor="Black" x:Name="TestLabel" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+			<Image Source="help_icon.png" HorizontalOptions="EndAndExpand" />
+  		
 		</StackLayout>
 	<!--- Title bar ends here-->
 
-	<!--- Usage Types -->
-		<StackLayout Orientation="Horizontal"  HorizontalOptions="Center" BackgroundColor="Gray" Spacing="10" Padding="10" >
-			<Image BackgroundColor="Yellow" Source="icon.png"  />
-			<Image BackgroundColor="Red"  Source="icon.png" />
-			<Image BackgroundColor="Green"  Source="icon.png" />
+	<!--- Usage Tabs Buttons -->
+		<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Padding="0" Spacing="0" >
+			<BoxView HorizontalOptions="FillAndExpand"  HeightRequest="1" BackgroundColor="#E3E3E3"></BoxView>
+			<StackLayout Orientation="Horizontal"  HorizontalOptions="Fill" BackgroundColor="#E3E3E3"  Padding="0" Spacing="1" >
+				<Image BackgroundColor="#00ACEA" Source="line_segment_select.png" x:Name="UsageButton" />
+				<Image BackgroundColor="White"  Source="circle_segment_unselect.png" x:Name="UsageReportButton" />
+				<Image BackgroundColor="White"  Source="grid_segment_unselect.png" x:Name="UsageDetailsButton" />
+			</StackLayout>
+			<BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" BackgroundColor="#BEC1C0"></BoxView>
 		</StackLayout>
 
-	<!--- Usage Types ends Here -->
-		<StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand"   Spacing="1" >
-			 <Label Text="Built in Voice"  HorizontalOptions="StartAndExpand" />
-			 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="Gray">
-				 <Label Text="0"  HorizontalOptions="StartAndExpand" />
-				 <Label Text="150" HorizontalOptions="EndAndExpand" />
+	<!--- Usage Tabs Buttons Ends -->
+
+	<!-- Usage page Elements -->
+		<StackLayout Orientation="Vertical" Spacing="0" Padding="0" x:Name="SlUsagePage">
+			<StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand"  Spacing="1"  >
+			<StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand"  Spacing="1"  Padding="15" >
+				 <Label Text="Bundle, Voice 150"  HorizontalOptions="StartAndExpand" FontSize="15" TextColor="#4F9932" />
+				 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"  >
+					 <Label Text="0"  HorizontalOptions="StartAndExpand" TextColor="#656565" />
+					 <Label Text="150" HorizontalOptions="EndAndExpand" TextColor="#656565"/>
+				 </StackLayout>
+				 <ProgressBar HeightRequest="15"  x:Name="ProgressBarCall"></ProgressBar>
+				 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+					 <Label Text="80 minutes used"  HorizontalOptions="StartAndExpand" TextColor="#929292" />
+					 <Label Text="Renewal date: 15 Oct 2015" HorizontalOptions="EndAndExpand" TextColor="#929292" />
+				 </StackLayout>
 			 </StackLayout>
-			 <ProgressBar ></ProgressBar>
-		</StackLayout>
-		
-		<StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand"   Spacing="1" >
-			 <Label Text="Built in Voice"  HorizontalOptions="StartAndExpand" />
-			 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="Gray">
-				 <Label Text="0"  HorizontalOptions="StartAndExpand" />
-				 <Label Text="150" HorizontalOptions="EndAndExpand" />
+			</StackLayout>
+			
+			<StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand"  Spacing="1" BackgroundColor="#EBEBEB" >
+			<StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand"  Spacing="1"  Padding="15" >
+				 <Label Text="Bundle, 2GB Data"  HorizontalOptions="StartAndExpand" FontSize="15" TextColor="#4F9932" />
+				 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+					 <Label Text="0"  HorizontalOptions="StartAndExpand" TextColor="#656565" />
+					 <Label Text="2000MB" HorizontalOptions="EndAndExpand" TextColor="#656565" />
+				 </StackLayout>
+				 <ProgressBar HeightRequest="15"  x:Name="ProgressBarData"></ProgressBar>
+				 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+					 <Label Text="80MB data used"  HorizontalOptions="StartAndExpand" TextColor="#929292" />
+					 <Label Text="Renewal date: 15 Oct 2015" HorizontalOptions="EndAndExpand" TextColor="#929292" />
+				 </StackLayout>
 			 </StackLayout>
-			 <ProgressBar HeightRequest="10"></ProgressBar>
+			</StackLayout>
+
+			<StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand"  >
+				<StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand"  Spacing="5"  Padding="15" >
+					<Label Text="Bundle, 5000 Text"  HorizontalOptions="StartAndExpand" FontSize="15" TextColor="#4F9932" />
+					<Label Text="Daily fair usage limit applies. See terms and conditions"  HorizontalOptions="StartAndExpand" TextColor="#929292" />
+					<Label Text="Renewal date: 15 Oct 2015"  HorizontalOptions="EndAndExpand" />
+				</StackLayout>
+			</StackLayout>
+		</StackLayout> 
+
+	<!-- Usage Report Elements -->
+
+		<StackLayout Orientation="Vertical" Spacing="0" Padding="0" x:Name="SlUsageReport" IsVisible="false">
+			<StackLayout Orientation="Vertical" Spacing ="25" Padding="25">
+				<Image Source="circle_01.png" HorizontalOptions="Center" />
+				<Image Source="circle_02.png" HorizontalOptions="Center" />
+			</StackLayout>
+				<Label Text="Daily fair usage limit applies. See terms and conditions." TextColor="#929292" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+			
 		</StackLayout>
 
+		<!-- Usage Details Elements -->
+
+		<StackLayout Orientation="Vertical" Spacing="0" Padding="0" x:Name="SlUsageDetail" IsVisible="false">
+			
+			<StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand"  Spacing="1"  Padding="10" >
+				<Label Text="Bundle, Voice 150"  HorizontalOptions="StartAndExpand" FontSize="15" TextColor="#4F9932" />
+				<StackLayout Orientation="Vertical" Spacing="5" Padding="10">
+					 <Label Text="Allowance............................................................150"  HorizontalOptions="StartAndExpand" TextColor="#929292" />
+					 <Label Text="Used...................................................................... 80"  HorizontalOptions="StartAndExpand" TextColor="#929292" />
+					 <Label Text="Left........................................................................ 70"  HorizontalOptions="StartAndExpand" TextColor="#929292" />
+			 	 </StackLayout>
+			</StackLayout>
+			
+			
+			<StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand"  Spacing="1" Padding="10" BackgroundColor="#EBEBEB" >
+
+				 <Label Text="Bundle, 2GB Data"  HorizontalOptions="StartAndExpand" FontSize="15" TextColor="#4F9932" />
+				 <StackLayout Orientation="Vertical" Spacing="5" Padding="10">
+					 <Label Text="Allowance....................................................2000MB"  HorizontalOptions="StartAndExpand" TextColor="#929292" />
+					 <Label Text="Used...............................................................  80MB"  HorizontalOptions="StartAndExpand" TextColor="#929292" />
+					 <Label Text="Left..............................................................1920MB"  HorizontalOptions="StartAndExpand" TextColor="#929292" />
+			 	 </StackLayout>
+			</StackLayout>
+
+			<StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand" >
+				<StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand"  Spacing="5"  Padding="10" >
+					<Label Text="Bundle, 5000 Text"  HorizontalOptions="StartAndExpand" FontSize="15" TextColor="#4F9932" />
+					<Label Text="Daily fair usage limit applies. See terms and conditions"  HorizontalOptions="StartAndExpand" TextColor="#929292" />
+				</StackLayout>
+			</StackLayout>
+		</StackLayout>
 	<!--- Bottom ToolBar -->
-		<StackLayout Orientation="Vertical" Spacing="5" VerticalOptions="EndAndExpand">
-			
-			 <Label Text="Last Refreshed 10:20:34" x:Name="RefreshLabel" HorizontalOptions="StartAndExpand" />
-			 <Label Text="Last Refreshed   100/150" x:Name="RefreshLabel1" HorizontalOptions="StartAndExpand" />
-			
-			<StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" BackgroundColor="Gray" Spacing="14"  >
-				<Image Source="icon.png"  />
-				<Image Source="icon.png" />
-				<Image Source="icon.png" />
-				<Image Source="icon.png" />
-				<Image Source="icon.png"/>
+		<StackLayout Spacing="0" Padding="0" Orientation="Vertical"  VerticalOptions="EndAndExpand">
+			<StackLayout Orientation="Vertical" Padding="15" >
+				 <Label Text="Information correct as of 10:30am on 1 Sep 2015" x:Name="RefreshLabel" HorizontalOptions="StartAndExpand" TextColor="#929292" />
+				 <Label Text="Last refreshed at 10:30am on 1 Sep 2015" x:Name="RefreshLabel1" HorizontalOptions="StartAndExpand" TextColor="#929292" />
+			</StackLayout>
+			<StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" BackgroundColor="#2B2B2B"  Padding="0"  Spacing="0" >
+				<StackLayout Orientation="Vertical" Padding="0"  Spacing="0">					
+					<Image Source="home_unselected.png"  HorizontalOptions="Center"  />
+					<Label Text="Home" HorizontalOptions="CenterAndExpand" VerticalOptions="Fill"  />
+				</StackLayout>
+				<StackLayout Orientation="Vertical" Padding="0"  Spacing="0" BackgroundColor="#141414" >			
+					<Image Source="usage_selected.png" />
+					<Label Text="Usage" HorizontalOptions="CenterAndExpand" VerticalOptions="Fill" TextColor="#00ACEA"  />
+				</StackLayout>
+				<StackLayout Orientation="Vertical" Padding="0" Spacing="0">			
+					<Image Source="topup_unselected.png" />
+					<Label Text="TopUp" HorizontalOptions="CenterAndExpand" VerticalOptions="Fill"  />
+				</StackLayout>
+				<StackLayout Orientation="Vertical" Padding="0"  Spacing="0">		
+					<Image Source="bundles_unselected.png" />
+					<Label Text="Bundle" HorizontalOptions="CenterAndExpand" VerticalOptions="Fill"  />
+				</StackLayout>
+				<StackLayout Orientation="Vertical" Padding="0"  Spacing="0">		
+					<Image Source="tariff_unselected.png"/>
+					<Label Text="Tariff" HorizontalOptions="CenterAndExpand" VerticalOptions="Fill"  />
+				</StackLayout>
 			</StackLayout>
 		</StackLayout>
 	<!--- Bottom ToolBar-->
-	</StackLayout>
-
+	</StackLayout> 
 	</ContentPage.Content>
 </ContentPage>

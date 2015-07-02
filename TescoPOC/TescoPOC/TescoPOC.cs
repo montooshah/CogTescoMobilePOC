@@ -1,4 +1,4 @@
-﻿// <copyright file="TescoPOC.cs" company="PayLess">
+﻿// <copyright file="TescoPOC.cs" company="Tesco">
 // Copyright (c) 2014-15 All Rights Reserved
 // </copyright>
 // <author>Vips </author>
@@ -13,20 +13,9 @@ namespace TescoPOC
 	public class App : Application
 	{
 		public App ()
-		{
-//			// The root page of your application
-//			MainPage = new ContentPage {
-//				Content = new StackLayout {
-//					VerticalOptions = LayoutOptions.Center,
-//					Children = {
-//						new Label {
-//							XAlign = TextAlignment.Center,
-//							Text = "Welcome to Xamarin Forms!"
-//						}
-//					}
-//				}
-//			};
-
+		{ 
+			//MainPage = new UsagePageReport ();
+			//MainPage = new UsagePageDetail ();
 			MainPage = new UsagePage ();
 		}
 
